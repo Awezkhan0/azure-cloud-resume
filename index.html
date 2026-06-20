@@ -10,6 +10,9 @@
     </style>
 </head>
 <body>
+    <p>Visitor count: <span id="visitor-count">0</span></p> 
+
+    
 
     <h1>Awez Khan</h1>
 
@@ -38,6 +41,14 @@
     <h2>Experience</h2>
 <h3>Desktop EUC — University Hospitals of Leicester</h3>
 <p class="date">April 2024 – June 2026</p>
+
+<script>
+  fetch("https://func-cloud-resume.azurewebsites.net/api/visitor-counter")
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("visitor-count").innerText = data.count;
+    });
+</script>
 
 <h2>Certifications</h2>
 <a class="cert" href="https://learn.microsoft.com/api/credentials/share/en-us/AwezKhan-1084/DB9DEB99FE967DC3?sharingId=864D215DA8D0728E" target="_blank">Microsoft Certified: Azure Fundamentals (AZ-900)</a>
