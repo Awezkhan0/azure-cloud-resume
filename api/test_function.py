@@ -6,11 +6,12 @@ import json
 
 class TestVisitorCounter(unittest.TestCase):
 
-  @patch('function_app.TableServiceClient')
+  @patch.dict('os.environ', {'COSMOS_CONNECTION_STRING': 'fake_connection_string'})
+    @patch('function_app.TableServiceClient')
   def test_existing_count_increments(self, mock_table_service):
     mock_table_client = MagicMock()
     mock_table_service.from_connection_string.return_value.get_table_client.return_value = mock_table_client
-
+    
     mock_table_client.get_entity.return_value = {
        "PartitionKey": "counter",
       "rowKey": "visits",
@@ -25,7 +26,8 @@ class TestVisitorCounter(unittest.TestCase):
     self.assertEqual(result["count"], 6)
 
 
-@patch('function_app.TableServiceClient')
+ @patch.dict('os.environ', {'COSMOS_CONNECTION_STRING': 'fake_connection_string'})
+    @patch('function_app.TableServiceClient')
 def test_new_count_starts_at_one(self, mock_table_service):
 
   mock_table_client = MagicMock()
