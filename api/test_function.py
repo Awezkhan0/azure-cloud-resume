@@ -7,7 +7,7 @@ import json
 class TestVisitorCounter(unittest.TestCase):
 
   @patch.dict('os.environ', {'COSMOS_CONNECTION_STRING': 'fake_connection_string'})
-    @patch('function_app.TableServiceClient')
+  @patch('function_app.TableServiceClient')
   def test_existing_count_increments(self, mock_table_service):
     mock_table_client = MagicMock()
     mock_table_service.from_connection_string.return_value.get_table_client.return_value = mock_table_client
