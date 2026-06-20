@@ -1,2 +1,5 @@
 azure-functions
 azure-data-tables
+azure-functions
+azure-data-tables
+pytest
