@@ -28,8 +28,7 @@ kind: 'functionapp,linux'
 properties: {
   siteConfig: {
    linuxFxVersion: 'Python|3.11'
-
-  appSettings: [
+   appSettings: [
  {
    name: 'FUNCTIONS_EXTENSION_VERSION'
    value: '-4'
