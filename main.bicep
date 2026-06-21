@@ -1,7 +1,7 @@
 param location string = 'westeurope'
 
-param cosmosAccountname string = 'cosmo-table-resume'
-param functionAppname string = 'func-cloud-resume'
+param cosmosAccountName string = 'cosmo-table-resume'
+param functionAppName string = 'func-cloud-resume'
 
 resource cosmosAccount 'Microsoft.DocumentDB/databaseAccounts@2023-04-15' = {
 name: cosmosAccountName
